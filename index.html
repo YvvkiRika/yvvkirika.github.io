@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2022 Yvvki Rika <https://github.com/YvvkiRika> -->
+<!-- Some of the materials used here are under Section 107 of the Copyright Act of 1976,
+     allowance is made for "Fair Use" for education and learning purposes.
+     I do not own these materials. All rights belong to their respective owners. -->
+<html lang="en">
+
+    <head>
+        <!-- Metas -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="yvvki, yvvkirika, yvvki-rika, yuukirika, yuuki-rika, smol_rika" />
+        <meta name="description" content="Personal artist, spaghetti coder, professional time waster." />
+
+        <!-- JQuery Script -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Font Awesome Script -->
+        <script src="https://kit.fontawesome.com/d2a3e29519.js" crossorigin="anonymous"></script>
+
+        <!-- Google Font Style -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Patrick+Hand&display=swap" rel="stylesheet" />
+
+        <!-- Style & Icon -->
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="favicon.png" rel="icon" />
+
+        <!-- Title -->
+        <title>Yvvki</title>
+    </head>
+
+    <body>
+        <div class="center">
+            <h1>Yvvki Rika</h1>
+            <br />
+
+            <h2>Repost if you uhh...</h2>
+
+            <!-- Youtube IFrame -->
+            <div id="player"></div>
+            <script>
+                // Loads the IFrame Player API code asynchronously.
+                var tag = document.createElement('script');
+
+                tag.src = "https://www.youtube.com/iframe_api";
+                var firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                // Creates an <iframe> (and YouTube player) after the API code downloads.
+                var player;
+                function onYouTubeIframeAPIReady()
+                {
+                    player = new YT.Player('player',
+                    {
+                        width: '640',
+                        height: '360',
+                        videoId: '5C3Q-uEB2A8',
+                        playerVars:
+                        {
+                            'playsinline': 1
+                        },
+                        events:
+                        {
+                            'onReady': onPlayerReady,
+                            'onStateChange': onPlayerStateChange
+                        }
+                    });
+                }
+
+                // Play the video when the video player is ready.
+                function onPlayerReady(event)
+                {
+                    event.target.playVideo();
+                }
+
+                // The API calls this function when the player's state changes.
+                // The function indicates that when playing a video (state=1),
+                // the player should play for six seconds and then stop.
+                var done = false;
+                function onPlayerStateChange(event)
+                {
+                    if (event.data == YT.PlayerState.PLAYING && !done)
+                    {
+                        setTimeout(stopVideo, 6000);
+                        done = true;
+                    }
+                }
+
+                function stopVideo()
+                {
+                    player.stopVideo();
+                }
+            </script>
+
+            <br />
+            <h2>Uhh umm uhh...</h2>
+        </div>
+        <footer>
+            <h4>Copyright (c) 2022 Yvvki Rika <a href="https://github.com/YvvkiRika">&lt;https://github.com/YvvkiRika&gt;</a></h4>
+        </footer>
+    </body>
+
+</html>
