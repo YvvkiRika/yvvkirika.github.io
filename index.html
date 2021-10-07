@@ -25,6 +25,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Patrick+Hand&display=swap" rel="stylesheet" />
 
         <!-- Style & Icon -->
+        <link href="css/rain-wrapper.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
         <link href="favicon.png" rel="icon" />
 
@@ -33,70 +34,13 @@
     </head>
 
     <body>
-        <div class="center">
-            <h1>Yvvki Rika</h1>
-            <br />
-
-            <h2>Repost if you uhh...</h2>
-
-            <!-- Youtube IFrame -->
-            <div id="player"></div>
-            <script>
-                // Loads the IFrame Player API code asynchronously.
-                var tag = document.createElement('script');
-
-                tag.src = "https://www.youtube.com/iframe_api";
-                var firstScriptTag = document.getElementsByTagName('script')[0];
-                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-                // Creates an <iframe> (and YouTube player) after the API code downloads.
-                var player;
-                function onYouTubeIframeAPIReady()
-                {
-                    player = new YT.Player('player',
-                    {
-                        width: '640',
-                        height: '360',
-                        videoId: '5C3Q-uEB2A8',
-                        playerVars:
-                        {
-                            'playsinline': 1
-                        },
-                        events:
-                        {
-                            'onReady': onPlayerReady,
-                            'onStateChange': onPlayerStateChange
-                        }
-                    });
-                }
-
-                // Play the video when the video player is ready.
-                function onPlayerReady(event)
-                {
-                    event.target.playVideo();
-                }
-
-                // The API calls this function when the player's state changes.
-                // The function indicates that when playing a video (state=1),
-                // the player should play for six seconds and then stop.
-                var done = false;
-                function onPlayerStateChange(event)
-                {
-                    if (event.data == YT.PlayerState.PLAYING && !done)
-                    {
-                        setTimeout(stopVideo, 6000);
-                        done = true;
-                    }
-                }
-
-                function stopVideo()
-                {
-                    player.stopVideo();
-                }
-            </script>
-
-            <br />
-            <h2>Uhh umm uhh...</h2>
+        <div class="rain-wrapper">
+            <div class="center">
+                <div>
+                    <h1>Yvvki Rika<br /></h1>
+                    <img src="img/5a946495857cd73ea86d0a2d0519833d.jpg" alt="Woh :flushed:" />
+                </div>
+            </div>
         </div>
         <footer>
             <h4>Copyright (c) 2022 Yvvki Rika <a href="https://github.com/YvvkiRika">&lt;https://github.com/YvvkiRika&gt;</a></h4>
